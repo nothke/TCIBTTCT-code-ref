@@ -1,10 +1,10 @@
 ### Intro
 
-This is a reference for tower spawning code
+This is a reference page for tower spawning code for [Throw Cubes into Brick Towers To Collapse Them](https://nothke.itch.io/tower)
 
-The code is written in Lua programming language, check out [Lua reference pages](https://www.lua.org/docs.html).
+The code is written in Lua programming language, check out [Lua reference pages](https://www.lua.org/docs.html) for syntax information. Only a "hard sandbox" subset of the Lua language is used that includes global consts, table iterators, string, table, basic, math and bit32 modules.
 
-There are 3 important types in the code, which are implemented through Lua tables. At the end of the code, the game collects collections of these 3 types to spawn them in the game.
+There are 3 important types for the game related code, which are implemented through Lua tables. At the end of the code, the game collects collections of these 3 types to spawn them in the game.
 
 * "brick" represents an instance and transform of a single brick. It contains position and rotation vectors, and references to the collider and a renderer.
 * "collider" represents the box collider of a brick. It is an "asset" and therefore should be shared between multiple bricks. It contains the dimension of the brick.
