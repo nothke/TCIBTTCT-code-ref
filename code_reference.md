@@ -42,23 +42,53 @@ To simplify the code, built-in functions (in the form of a header) provides cons
 
 ### Examples:
 
-Create a brick and move it to x = 10, rotate by 90 degrees around vertical axis
+The simplest way to start is to make a single brick:
+```
+brk()
+```
+This creates a brick and adds it to the list that is then, at the end, returned to the engine to spawn all the cubes. Changing it's position is done by setting it's "pos" value which is just a x, y, z keyed table
+```
+brk().pos.y = 10
+```
+Or, of course, you can put it in a variable to modify multiple values
 ```
 b = brk()
+b.pos.y = 10
 b.pos.x = 10
-b.rot.y = 90
 ```
-Create a brick with size 10
+Alternatively you can create the whole vector by using vec()
+```
+b = brk()
+b.pos = vec(10,10,0)
+```
+Changing the bricks size must be done by providing a collider to the brick
+```
+c = col() -- creates the collider table
+c.dim.z = 5
+b = brk(c)
+b.pos.y = 10
+```
+To color the cube, you can provide a renderer and set its color property
+```
+r = rend() -- creates the renderer table
+r.color = "#FF0000"
+c = col()
+c.dim.z = 5
+b = brk(c, r) -- provide the renderer as a second parameter
+b.pos.y = 10
+```
+Renderers and colliders should be shared between multiple bricks for best performance.
+
+As you have noticed, brk() function accepts 2 optional parameters, of which the first is collider, and the second is renderer.
+
+Here's a simplest actual use case: create a stack of 100 bricks. Use collider y dimension for calculating offset, so that we can assign any brick height.
 ```
 c = col()
-c.dim = vec(10,10,10)
-brk(c)
-```
-Create a red brick
-```
-r = rend()
-r.color = "#FF0000"
-brk(col(), r) -- note that we need to pass a collider first
+c.dim.y = 1 -- assign any value and it'll work!
+
+for i=1,100 do
+ brk(c).pos.y = c.dim.y * (0.5 + i - 1)
+end
 ```
 
 ### Notes
