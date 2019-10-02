@@ -37,8 +37,20 @@ To simplify the code, built-in functions (in the form of a header) provides cons
 * `vmul(a,b)` - returns a vector with memberwise multiplication of 2 vectors
 * `vneg(v)` - returns negative vector
 * `vscl(v, num)` - scale vector by a number
+* `vrad2deg(rot)` - converts (rotation) vector in radians to degrees (added in v2)
+* `vdeg2rad(rot)` - converts (rotation) vector in degrees to radians (added in v2)
+
+#### Math functions
 
 * `dir2angle(dir)` - converts direction to y angle from x and z (automatically normalizes the input vector)
+* `rad2deg(num)` - converts radians to degrees (added in v2)
+* `deg2rad(num)` - converts degrees to radians (added in v2)
+* For standard math functions you can use the [math library functions](http://lua-users.org/wiki/MathLibraryTutorial), e.g. `math.sin(x)`
+
+#### Utility functions
+
+* `script_version` - you can use it to check compatibilites for possibly deprectated functions. For example `if script_version < 1 then print("This script is not compatible with your version of the game") end`. (added in v1)
+* `randomize_colors([color1], [color2])`- colors all bricks into 2 shades at random order, similar how the tower in pre-code era looked. If no color arguments are passed 2 shades of gray will be used. (added in v1)
 
 ### Examples:
 
