@@ -77,10 +77,30 @@ c.dim.z = 5
 b = brk(c, r) -- provide the renderer as a second parameter
 b.pos.y = 10
 ```
-Renderers and colliders should be shared between multiple bricks for best performance.
+As you have noticed, brk() function accepts 2 optional arguments, of which the first is collider, and the second is renderer. If one or both arguments are not provided, the last used collider/renderer will be used. If there are no previous ones, a new one is automatically created.
 
-As you have noticed, brk() function accepts 2 optional parameters, of which the first is collider, and the second is renderer.
+Renderers and colliders should be shared between multiple bricks for best performance. Since they act as shared components, that also means that editing one of them after the fact affects all the bricks that have that collider/renderer assigned.
 
+Although you can edit, for example, the color of the renderer by directly referencing it on the brick, note that that will change color of all bricks assigned to it. In the same way that editing the renderer itself does.
+```
+r = rend()
+r.color = "#FF0000" -- red
+b1 = brk(nil, r) -- nil for the collider means the last (or new) collider will be used
+b2 = brk(nil, r)
+b1.rend.color = "#00FF00" -- changes the color of the renderer to green, which also changes the color of the first brick
+```
+To assign different color to 2 bricks, you need to create 2 renderers
+```
+r1 = rend()
+r1.color = "#FF0000"
+b1 = brk(nil, r1) -- the red brick
+b1.pos.y = 0.5
+
+r2 = rend()
+r2.color = "#00FF00"
+b2 = brk(nil, r2) -- the green brick
+b2.pos.y = 1.5
+```
 Here's a simplest actual use case: create a stack of 100 bricks. Use collider y dimension for calculating offset, so that we can assign any brick height.
 ```
 c = col()
