@@ -6,7 +6,11 @@ A few customers have had issues with payment where they pay but never receive th
 
 Since the newest tower update, some users have had the problem where the tower doesn't show up on start. As the towers are now read from a text file, this is likely to be the problem with file reading permissions on your system. 
 
-If that happens, try to move the game into your documents folder, where your "user" is likely to have full reading and writing permissions. If that doesn't fix the issue, report it to me on nothke@gmail.com
+If that happens, try to move the game into your documents folder, where your "user" is likely to have full reading and writing permissions. 
+
+If that doesn't fix the issue, send a log file found at 
+`C:\Users\username\AppData\LocalLow\Nothke\Tower\Player.log`
+to me at nothke@gmail.com
 
 ## Resolution change
 
