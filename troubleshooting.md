@@ -20,7 +20,7 @@ Be very careful because most example files have A LOT of cubes. You can see the 
 
 ## The resolution is tiny and the UI is now unreachable
 
-When you change the resolution of the game, there is a 10 second timeout whent you need to accept the resolution, otherwise the resolution will revert to the previously used one. That is a safety feature to prevent UI from being unreachable.
+When you change the resolution of the game, there is a 10 second timeout when you need to accept the resolution, otherwise the resolution will revert to the previously used one. That is a safety feature to prevent UI from being unreachable.
 However, there could be a chance you lock the resolution to small one by either accepting accidentally or quitting the game while the countdown process is running.
 
 The only way to change resolution now is to change it in the registry, where Unity stores the selected resolution.
