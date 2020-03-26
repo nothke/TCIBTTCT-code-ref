@@ -12,7 +12,13 @@ If that doesn't fix the issue, send a log file found at
 `C:\Users\username\AppData\LocalLow\Nothke\Tower\Player.log`
 to me at nothke@gmail.com
 
-## Resolution change
+## Loading MagicaVoxel files doesn't work
+
+To load MagicaVoxel files, you MUST export them from MagicaVoxel as POINT .ply file, and save it into <GamePath>/MagicaVoxel/ folder
+
+Be very careful because most example files have A LOT of cubes. You can see the cube count when you select the file and I don't suggest loading over 20k cubes.
+
+## The resolution is tiny and the UI is now unreachable
 
 When you change the resolution of the game, there is a 10 second timeout whent you need to accept the resolution, otherwise the resolution will revert to the previously used one. That is a safety feature to prevent UI from being unreachable.
 However, there could be a chance you lock the resolution to small one by either accepting accidentally or quitting the game while the countdown process is running.
