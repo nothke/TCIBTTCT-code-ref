@@ -30,3 +30,6 @@ The only way to change resolution now is to change it in the registry, where Uni
 3. There should be 2 keys Screenmanager Resolution Height_h2627697771 and Screenmanager Resolution Width_h182942802, those are your current height and width resolution
 4. Open each and set to "decimal", now enter your desired screen resolutions and hit OK
 
+## For other bugs
+
+If you have any other bugs not mentioned above, please send a log file found at C:\Users\username\AppData\LocalLow\Nothke\Tower\Player.log to me at nothke@gmail.com
