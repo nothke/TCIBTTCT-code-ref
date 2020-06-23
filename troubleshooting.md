@@ -2,9 +2,11 @@
 
 A few customers have had issues with payment where they pay but never receive the game. That is a known issue with payment confirmation processing between Itch and PayPal. In that case, please contact me at nothke@gmail.com with the PayPal receipt (or just the buyer's PayPal account name is enough) so I can send you the key to activate the game. Note that I might be busy and not reply immediately, in which case I'm sorry in advance.
 
-## Tower doesn't show up on start
+## Tower doesn't show up on start (fixed)
 
-Since the version 8, some users have had the problem where the tower doesn't show up on start. As the towers are now read from a text file, this is likely to be the problem with file reading permissions on your system.
+Update: This problem has been fixed as of version 9, and it had to do with some systems (depending where you're from) reading a decimal separator using ",".
+
+Original text: Since the version 8, some users have had the problem where the tower doesn't show up on start. As the towers are now read from a text file, this is likely to be the problem with file reading permissions on your system.
 
 If that happens, try to move the game into your documents folder, where your "user" is likely to have full reading and writing permissions. 
 
